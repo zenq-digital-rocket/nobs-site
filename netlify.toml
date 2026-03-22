@@ -1,0 +1,49 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/videos"
+  to = "/pages/videos.html"
+  status = 200
+
+[[redirects]]
+  from = "/podcast"
+  to = "/pages/podcast.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/pages/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/resources"
+  to = "/pages/resources.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/pages/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/work-with-us"
+  to = "/pages/work-with-us.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/pages/404.html"
+  status = 404
